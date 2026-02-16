@@ -1,3 +1,66 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Error</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+
+      .error-container {
+        text-align: center;
+        padding: 2.5em 3em;
+        border-radius: 20px;
+        background: rgb(48, 136, 0);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .status {
+        font-size: 4em;
+        font-weight: bold;
+      }
+
+      .message {
+        font-size: 2em;
+        margin: 10px 0 30px;
+        opacity: 0.9;
+      }
+
+      .home-btn {
+        text-decoration: none;
+        background: white;
+        color: #5fbf50;
+        padding: 1em 0.8em;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .home-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="error-container">
+      <div class="status"><%= error.status %></div>
+      <div class="message"><%= error.message %></div>
+
+      <a href="/" class="home-btn">Go Home</a>
+    </div>
+  </body>
+</html>

@@ -1,8 +1,11 @@
-const router = require('express').Router();
+const {
+  getAlias,
+  getAllUrls,
+  createAlias,
+} = require("../controller/urlController");
+const router = require("express").Router();
 
-/* GET home page. */
-router.get('/', function (req, res, next) {
-    res.render('index', { title: 'Express' });
-});
-
+router.get("/", getAllUrls);
+router.get("/:alias", getAlias);
+router.post("/insert", createAlias);
 module.exports = router;
