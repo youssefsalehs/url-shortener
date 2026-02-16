@@ -1,46 +1,85 @@
 # URL Shortener App
 
-This is starter code for URL Shortener Project.
+A simple URL shortener website that converts long website addresses into short, manageable links. Users can input a long URL and an optional alias, and the system generates a short URL that redirects to the original link.
 
-Fork this repository and use the given files to start with.
+## Table of Contents
 
-## Idea
+- [Features](#features)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Application Logic](#application-logic)
 
-A URL shortener website is a service that converts long website addresses into shorter, more manageable links. Users input a lengthy URL, and the website generates a condensed version, making it easier to share and remember.
 
-## Interface
+## Features
 
-The application interface consists of one page which contains:
+- Generate short URL from long URL
+- Custom alias or random alias generation
+- Redirect to original URL using alias
+- 404 error for non-existing URLs
+- Display all shortened URLs in a table
+- Server-side rendering
+- MongoDB database integration
+- Runs locally without crashes
 
-* A form to shorten the URL, which takes two inputs:
-    - the long version of the url
-    - the alias of the url (defaults to a random string)
-* A table which contains the previously shortened URLs.
+## Technologies
 
-## Short URLs
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- EJS (or Pug/Handlebars, depending on your implementation)
 
-The short URLs are written in this form:
+## Installation
 
+1. Clone the repository:
+
+```bash
+git clone (https://github.com/youssefsalehs/url-shortener)
 ```
-http://localhost:3000/{alias}
+2. Install dependencies:
+
+```bash
+npm install
 ```
+
+
+3. Make sure MongoDB is running locally:
+
+```bash
+mongod
+```
+
+4. Start the server:
+
+```bash
+npm start
+```
+
+5. Open your browser and go to:
+
+http://localhost:3000
+
+## Usage
+
+- Enter a long URL in the input form.
+
+- Optionally, provide an alias. If none is provided, a random string will be generated.
+
+- Submit the form.
+
+- The shortened URL will appear in the table.
+
+- Click the short URL or visit http://localhost:3000/{alias} to be redirected to the original URL.
 
 ## Application Logic
 
-* When a client tries to access the short URL, they should be redirected to the original long URL.
-* If the client accesses a URL which doesn't exist, a `404` error should be displayed.
-* There's no required authentication or authorization to generate short URLs.
+- User submits long URL + optional alias.
 
-## Project Criteria
+- URL is saved in MongoDB database.
 
-- [ ] The application runs locally without any crashes
-- [ ] The application logic is implemented correctly
-- [ ] The application uses server-side rendering
-- [ ] The application uses a MongoDB database
+- Visiting /alias redirects to the original URL.
 
-## Project Evaluation (50 pts.)
+- Accessing a non-existing alias displays a 404 error.
 
-* Project Completeness (25 pts.)
-* Clean Code and Modulation (15 pts.)
-* Descriptive Git Commit Messages (10 pts.)
-* Nice touches (5 pts. bonus)
+
